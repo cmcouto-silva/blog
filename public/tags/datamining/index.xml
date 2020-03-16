@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>datamining on cmcouto-silva</title>
+    <link>https://cmcouto-silva.netlify.com/tags/datamining/</link>
+    <description>Recent content in datamining on cmcouto-silva</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Sun, 15 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cmcouto-silva.netlify.com/tags/datamining/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Coronavírus: atualização diária dos casos e mortes no Brasil</title>
+      <link>https://cmcouto-silva.netlify.com/blog/2020/03/15/2020-03-16-coronavirus/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmcouto-silva.netlify.com/blog/2020/03/15/2020-03-16-coronavirus/</guid>
+      <description>Gráficos interativos da incidência de coronavírus no Brasil  Este é um post informativo sobre a incidência de corona-vírus no Brasil, com gráficos interativos. Os dados utilizados foram retirados da Organização Mundial da Saúde, e estão sendo atualizados diaramente (vide última atualização).
+Além do Brasil, mostra os dados da Espanha (onde estou) e dos 10 países com maiores indices de corona vírus. Os gráficos e as datas são gerados de forma automática através do download dos dados da OMS (que estão sendo atualizados diariamente).</description>
+    </item>
+    
+  </channel>
+</rss>

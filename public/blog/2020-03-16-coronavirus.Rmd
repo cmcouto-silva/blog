@@ -1,0 +1,122 @@
+---
+title: 'Coronavírus: atualização diária dos casos e mortes no Brasil'
+author: Cainã Max Couto-Silva
+date: '2020-03-15'
+slug: coronavirus
+categories:
+  - R
+  - Human Population
+tags:
+  - R
+  - datamining
+  - human population
+banner: "img/banners/codiv19.png"
+description: >
+  Acesse para atualização diária dos casos e mortes de coronavírus no Brasil.
+---
+
+## Gráficos interativos da incidência de coronavírus no Brasil
+  
+&nbsp;
+
+Este é um post informativo sobre a incidência de corona-vírus no Brasil, com gráficos interativos. Os dados utilizados foram retirados da <a href="https://ourworldindata.org/coronavirus-source-data" target="_blank">Organização Mundial da Saúde</a>, e estão sendo atualizados diaramente (vide última atualização).
+
+Além do Brasil, mostra os dados  da Espanha (onde estou) e dos 10 países com maiores indices de corona vírus. Os gráficos e as datas são gerados de forma automática através do download dos dados da OMS (que estão sendo atualizados diariamente).
+
+Post atualizado pela última vez em: ```r format(Sys.time(), "%d de %B de %Y, %H:%M (GMT+1)")```.
+
+---
+  
+Dados para o Brasil e Espanha (gráficos interativos):
+  
+&nbsp;
+
+```{r, echo=FALSE, fig.width=9}
+library(data.table)
+library(magrittr)
+
+library(ggplot2, warn.conflicts = F)
+library(plotly, warn.conflicts = F)
+
+dt <- fread("https://covid.ourworldindata.org/data/full_data.csv")[, date:=as.Date(date)]
+dt1 <- copy(dt)[, .(Data=date, Localização=location, Quantidade=total_cases, Categoria="Casos")]
+dt2 <- copy(dt)[, .(Data=date, Localização=location, Quantidade=total_deaths, Categoria="Mortes")]
+
+dt <- rbind(dt1, dt2)[!is.na(Quantidade)]
+clrs <- c("#1f78b4", "#ff0000")
+
+# Brazil & Spain
+target_countries <- c("Brazil", "Spain")
+
+plt_lst <- lapply(target_countries, function(country) {
+  prep_country <- ifelse(country=="Spain", "na Espanha", "no Brasil")
+  g <- ggplot(dt[Localização==country], aes(Data, Quantidade, color=Categoria)) +
+    geom_point(size=3, alpha=.8) + geom_line(size=1, alpha=.8) +
+    labs(x="", y="",color="Legenda", title=paste("Incidência de CODIV-19", prep_country)) +
+    scale_x_date(date_labels="%b %d", breaks="1 days") +
+    scale_color_manual(values = clrs) +
+    theme_bw() + 
+    theme (
+      title = element_text(size=16, face = "bold"),
+      text = element_text(size=12),
+      legend.title = element_text(size=12),
+      legend.background = element_rect(colour="transparent", fill="transparent"),
+      axis.text.x = element_text(angle = 90)
+    )
+  layout(ggplotly(g), legend = list(orientation = "h"))
+}) %>% set_names(target_countries)
+
+# Plot target countries
+htmltools::tagList(plt_lst)
+```
+
+&nbsp;
+
+Felizmente, não há nenhuma morte de pessoas com diagnóstico confirmado no Brasil.
+E por fim um gráfico estático com os 10 países com maiores incidências de CODVID-19:
+  
+  &nbsp;
+
+```{r world, echo=F, fig.width=9}
+# World
+clrs <- c("#1f78b4", "#ff0000")
+
+country_clrs <- c (
+  "#d90089", #1
+  "#00a466", #2
+  "#928a00", #3
+  "#00e8f3", #4
+  "#ff0032", #5
+  "#000c4a", #6
+  "#8000a3", #7
+  "#2e20b8", #8
+  "gray30", #9
+  "#ff4200" #10
+)
+
+first10 <- dt[Localização!="World", .(N=max(Quantidade)), by = Localização][
+  order(N, decreasing = T)][1:10, Localização]
+
+top10 <- dt[Localização%in%first10][
+  , Localização:=factor(Localização, levels = first10, ordered = T)]
+
+top10 <- ggplot(top10, aes(Data, Quantidade, color=Categoria, fill=Localização)) +
+  geom_line(size=1, alpha=.8) + geom_point(size=3.5, alpha=.8, shape=21) +
+  labs(x="", y="", fill='País',
+       title="Países com maiores incidências de CODVID19") +
+  scale_x_date(date_labels="%b %d", breaks="1 week") +
+  scale_color_manual(values = clrs) +
+  scale_fill_manual(values = country_clrs) +
+  theme_bw() + 
+  theme (
+    text = element_text(size=12),
+    plot.title = element_text(size=16, face = "bold", margin=margin(0,0,10,0)),
+    legend.title = element_text(size=12, face = "bold"),
+    legend.background = element_rect(colour="transparent", fill="transparent"),
+    axis.text.x = element_text(angle = 90)
+  )
+
+top10
+```
+
+O código deste post pode ser acessado através <a href="#" target="_blank">deste link</a> via github.
