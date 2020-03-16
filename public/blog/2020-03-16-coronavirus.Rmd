@@ -119,4 +119,4 @@ top10 <- ggplot(top10, aes(Data, Quantidade, color=Categoria, fill=Localização
 top10
 ```
 
-O código deste post pode ser acessado através <a href="#" target="_blank">deste link</a> via github.
+O código deste post pode ser acessado através <a href="https://github.com/cmcouto-silva/blog/blob/master/content/blog/2020-03-16-coronavirus.Rmd" target="_blank">deste link</a> via github.
