@@ -52,7 +52,7 @@ plt_lst <- lapply(target_countries, function(country) {
   prep_country <- ifelse(country=="Spain", "na Espanha", "no Brasil")
   g <- ggplot(dt[Localização==country], aes(Data, Quantidade, color=Categoria)) +
     geom_point(size=3, alpha=.8) + geom_line(size=1, alpha=.8) +
-    labs(x="", y="",color="Legenda", title=paste("Incidência de CODIV-19", prep_country)) +
+    labs(x="", y="",color="Legenda", title=paste("Incidência de COVID-19", prep_country)) +
     scale_x_date(date_labels="%b %d", breaks="1 days") +
     scale_color_manual(values = clrs) +
     theme_bw() + 
@@ -103,7 +103,7 @@ top10 <- dt[Localização%in%first10][
 top10 <- ggplot(top10, aes(Data, Quantidade, color=Categoria, fill=Localização)) +
   geom_line(size=1, alpha=.8) + geom_point(size=3.5, alpha=.8, shape=21) +
   labs(x="", y="", fill='País',
-       title="Países com maiores incidências de CODVID-19") +
+       title="Países com maiores incidências de COVID-19") +
   scale_x_date(date_labels="%b %d", breaks="1 week") +
   scale_color_manual(values = clrs) +
   scale_fill_manual(values = country_clrs) +
