@@ -103,7 +103,7 @@ top10 <- dt[Localização%in%first10][
 top10 <- ggplot(top10, aes(Data, Quantidade, color=Categoria, fill=Localização)) +
   geom_line(size=1, alpha=.8) + geom_point(size=3.5, alpha=.8, shape=21) +
   labs(x="", y="", fill='País',
-       title="Países com maiores incidências de CODVID19") +
+       title="Países com maiores incidências de CODVID-19") +
   scale_x_date(date_labels="%b %d", breaks="1 week") +
   scale_color_manual(values = clrs) +
   scale_fill_manual(values = country_clrs) +
