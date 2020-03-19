@@ -23,7 +23,7 @@ Este é um post informativo sobre a incidência de corona-vírus no Brasil, com 
 
 Além do Brasil, mostra os dados  da Espanha (onde estou) e dos 10 países com maiores indices de corona vírus. Os gráficos e as datas são gerados de forma automática através do download dos dados da OMS (que estão sendo atualizados diariamente).
 
-Post atualizado pela última vez em: ```r format(Sys.time(), "%d de %B de %Y, %H:%M (GMT+1)")```.
+Post atualizado pela última vez em: ```r format(Sys.time(), "%d de %B de %Y, %H:%M (UTC-3)")```.
 
 ---
   
