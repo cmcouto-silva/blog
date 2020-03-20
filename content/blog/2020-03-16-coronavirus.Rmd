@@ -38,11 +38,11 @@ library(magrittr)
 library(ggplot2, warn.conflicts = F)
 library(plotly, warn.conflicts = F)
 
-dt <- fread("https://covid.ourworldindata.org/data/who/full_data.csv")[, date:=as.Date(date)]
+dt <- fread("https://covid.ourworldindata.org/data/ecdc/full_data.csv")[, date:=as.Date(date)]
 dt1 <- copy(dt)[, .(Data=date, Localização=location, Quantidade=total_cases, Categoria="Casos")]
 dt2 <- copy(dt)[, .(Data=date, Localização=location, Quantidade=total_deaths, Categoria="Mortes")]
 
-dt <- rbind(dt1, dt2)[!is.na(Quantidade)]
+dt <- rbind(dt1, dt2)[Quantidade>0]
 clrs <- c("#1f78b4", "#ff0000")
 
 # Brazil & Spain
@@ -72,7 +72,6 @@ htmltools::tagList(plt_lst)
 
 &nbsp;
 
-Felizmente, não há nenhuma morte de pessoas com diagnóstico confirmado no Brasil.
 E por fim um gráfico estático com os 10 países com maiores incidências de CODVID-19:
   
   &nbsp;
