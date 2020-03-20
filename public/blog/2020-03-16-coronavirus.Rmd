@@ -38,7 +38,7 @@ library(magrittr)
 library(ggplot2, warn.conflicts = F)
 library(plotly, warn.conflicts = F)
 
-dt <- fread("https://covid.ourworldindata.org/data/full_data.csv")[, date:=as.Date(date)]
+dt <- fread("https://covid.ourworldindata.org/data/who/full_data.csv")[, date:=as.Date(date)]
 dt1 <- copy(dt)[, .(Data=date, Localização=location, Quantidade=total_cases, Categoria="Casos")]
 dt2 <- copy(dt)[, .(Data=date, Localização=location, Quantidade=total_deaths, Categoria="Mortes")]
 
