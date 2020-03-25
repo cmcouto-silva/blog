@@ -26,7 +26,7 @@ Além do Brasil, mostra os dados  da Espanha (onde estou) e dos 10 países com m
 Post atualizado pela última vez em: ```r format(Sys.time(), "%d de %B de %Y, %H:%M (UTC-3)")```.
 
 ---
-  
+
 Dados para o Brasil e Espanha (gráficos interativos):
   
 &nbsp;
