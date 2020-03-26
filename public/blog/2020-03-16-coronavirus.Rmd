@@ -10,7 +10,7 @@ tags:
   - R
   - datamining
   - human population
-banner: "img/banners/codiv19.png"
+banner: "img/banners/covid19.png"
 description: >
   Acesse para atualização diária dos casos e mortes de coronavírus no Brasil.
 ---
@@ -88,7 +88,7 @@ htmltools::tagList(plt_lst)
 
 &nbsp;
 
-E por fim um gráfico estático com os 10 países com maiores incidências de CODVID-19:
+E por fim um gráfico estático com os 10 países com maiores incidências de COVID-19:
   
   &nbsp;
 
