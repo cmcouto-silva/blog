@@ -15,6 +15,22 @@ description: >
   Acesse para atualização diária dos casos e mortes de coronavírus no Brasil.
 ---
 
+<div style="background-color: #cecece; padding: 10px 30px;">
+<div style="text-align: center">
+### NOTA IMPORTANTE
+</div>
+---
+
+<p style="text-align: justify;">Este era um post temporário por conta de problemas técnicos, e o mesmo foi atualizado no meu [site do github](https://cmcouto-silva.github.io/blog/coronavirus-atualizacao-diaria-dos-casos-e-mortes-no-brasil/). Neste novo site, o post inclui 1) novos gráficos e 2) suporte para visualização no celular. Igualmente, está sendo atualizado diariamente, e possui "conclusões" automáticas constatando qual país apresenta maior quantidade de casos e mortes, totais ou recentes, conforme a data de atualização. Todos os gráficos nele são interativos.</p>
+<div style="text-align: center">
+
+<a href="https://cmcouto-silva.github.io/blog/coronavirus-atualizacao-diaria-dos-casos-e-mortes-no-brasil" class="btn btn-small btn-template-main">Acesse o post atualizado aqui</a>
+
+</div>
+</div>
+
+&nbsp;
+
 ## Gráficos interativos da incidência de coronavírus no Brasil
   
 &nbsp;
