@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Get to the local blog repository
-cd /home/cmcouto-silva/cmcouto.silva@usp.br/R/blog
-
 # Update site
 R -e 'blogdown::build_site()'
 
@@ -10,8 +7,8 @@ R -e 'blogdown::build_site()'
 git add .
 
 # commit modifications
-git commit -m'daily update'
+#git commit -m'daily update'
 
 # pushing modification to github
-git push origin master
+#git push origin master
 
