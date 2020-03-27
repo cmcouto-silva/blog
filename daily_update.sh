@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Get to the local blog repository
+cd /home/cmcouto-silva/cmcouto.silva@usp.br/R/blog
+
 # Update site
 R -e 'blogdown::build_site()'
 
