@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Update site
-R -e 'blogdown::build_site()'
+R -e 'blogdown::build_site(); x=getwd(); writeLines(x, "wd.txt")'
 
 # add modification to stage area
 git add .
