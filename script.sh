@@ -3,5 +3,5 @@
 echo $PWD
 echo $PWD > zeta.txt
 
-R -e 'x=getwd();writeLines(x, "wd.txt")'
+R -e 'getwd(); x=getwd(); writeLines(x, "wd.txt")'
 
