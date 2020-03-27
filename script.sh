@@ -3,5 +3,5 @@
 echo $PWD
 echo $PWD > zeta.txt
 
-R -e 'getwd(); x=getwd(); writeLines(x, "wd.txt")'
+R -e 'error=try(blogdown::build_site()); writeLines(error, "error.txt")'
 
