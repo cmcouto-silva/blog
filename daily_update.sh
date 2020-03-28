@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Remove previously html post
+rm content/blog/2020-03-16-coronavirus.html
+
 # Update site
 R -e 'blogdown::build_site()'
 
