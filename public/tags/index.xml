@@ -6,9 +6,37 @@
     <description>Recent content in Tags on cmcouto-silva</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
+    <lastBuildDate>Sun, 15 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cmcouto-silva.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>datamining</title>
+      <link>https://cmcouto-silva.netlify.com/tags/datamining/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmcouto-silva.netlify.com/tags/datamining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>human population</title>
+      <link>https://cmcouto-silva.netlify.com/tags/human-population/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmcouto-silva.netlify.com/tags/human-population/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://cmcouto-silva.netlify.com/tags/r/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cmcouto-silva.netlify.com/tags/r/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
