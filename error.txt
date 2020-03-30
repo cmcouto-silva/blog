@@ -1,3 +1,0 @@
-Error in render_page(f) : 
-  Failed to render 'content/blog/2020-03-16-coronavirus.Rmd'
-
